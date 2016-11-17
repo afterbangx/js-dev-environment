@@ -6,9 +6,10 @@
     "//":"any script you prefix with pre- will run before any script with the same name",
     "//":"any script you prefix with post- will run after any script with the same name",
     "prestart": "node build-scripts/start-message.js",
-    "start": "node build-scripts/src-server.js",
+    "start": "npm-run-all --parallel security-check open:src",
     "security-check":"nsp check",
-    "share":"lt --port 3000"
+    "share":"lt --port 3000",
+    "open:src": "node build-scripts/src-server.js"
   },
   "author": "Andy Milbeck",
   "license": "MIT",
