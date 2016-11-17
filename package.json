@@ -2,15 +2,17 @@
   "name": "javascript-development-environment",
   "version": "1.0.0",
   "description": "Following along the JavaScript development environment Pluralsight course by Cory House",
+  "//":[
+    "any script you prefix with pre- will run before any script with the same name",
+    "any script you prefix with post- will run after any script with the same name"
+    ],
   "scripts": {
-    "//":"any script you prefix with pre- will run before any script with the same name",
-    "//":"any script you prefix with post- will run after any script with the same name",
-    "prestart": "node build-scripts/start-message.js",
+    "prestart": "babel-node build-scripts/start-message.js",
     "start": "npm-run-all --parallel security-check open:src",
     "security-check":"nsp check",
     "localtunnel":"lt --port 3000",
     "share": "npm-run-all --parallel open:src localtunnel",
-    "open:src": "node build-scripts/src-server.js"
+    "open:src": "babel-node build-scripts/src-server.js"
   },
   "author": "Andy Milbeck",
   "license": "MIT",
