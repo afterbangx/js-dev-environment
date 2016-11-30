@@ -17,7 +17,7 @@ describe('index.html', () => {
     // the JSDOM environment as the second parameter if needed
     jsdom.env(index, function(err, window) {
       const h1 = window.document.getElementsByTagName('h1')[0];
-      expect(h1.innerHTML).to.equal("Hello, World!");
+      expect(h1.innerHTML).to.equal("Hello, World?");
       done();
       window.close();
     });
